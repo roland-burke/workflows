@@ -9,7 +9,6 @@ on:
 jobs:
   build-and-push-docker-image:
     runs-on: ubuntu-latest
-    needs: call-build-and-test-workflow
     steps:
       - uses: actions/checkout@v3
 

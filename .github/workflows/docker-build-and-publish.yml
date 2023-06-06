@@ -35,10 +35,10 @@ jobs:
             ghcr.io/roland-burke/${{ inputs.image-name }}
           # Docker tags based on the following events/attributes
           lavor: |
-            latest=auto
+            latest=true
           tags: |
             type=semver,pattern={{version}}
-            type=ref,event=branch
+            type=schedule,pattern={{date 'YYYYMMDD'}}
 
       - name: Build and push
         uses: docker/build-push-action@v3

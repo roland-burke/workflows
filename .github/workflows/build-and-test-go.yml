@@ -1,10 +1,6 @@
 name: Build and Test go
 on:
   workflow_call:
-    inputs:
-      coverage-output-file:
-        required: true
-        type: string
 
 jobs:
   build-and-test:
@@ -21,4 +17,9 @@ jobs:
         run: go build -v ./cmd/main
 
       - name: Test
-        run: go test ./... -v -coverprofile=${{ coverage-output-file }}
+        run: go test ./... -v -coverprofile=coverage.out
+        
+      - name: Coveralls
+        uses: shogo82148/actions-goveralls@v1
+        with:
+          path-to-profile: coverage.out

@@ -34,7 +34,7 @@ jobs:
           images: |
             ghcr.io/roland-burke/${{ inputs.image-name }}
           # Docker tags based on the following events/attributes
-          lavor: |
+          flavor: |
             latest=true
           tags: |
             type=semver,pattern={{version}}

@@ -38,7 +38,7 @@ jobs:
             latest=true
           tags: |
             type=semver,pattern={{version}}
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=edge,branch=master
 
       - name: Build and push
         uses: docker/build-push-action@v3
